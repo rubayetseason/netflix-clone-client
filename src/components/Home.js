@@ -47,10 +47,10 @@ const Home = () => {
       <hr />
       <section className="my-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-10 place-items-center">
-          <div>
-            <img src={tv} className="md:p-5" alt="" />
+          <div className="">
+            <img src={tv} alt="" />
           </div>
-          <div className="pr-8">
+          <div className="pr-8 md:row-start-1 ">
             <h1 className="text-3xl md:text-5xl font-semibold">
               Enjoy on your TV.
             </h1>
