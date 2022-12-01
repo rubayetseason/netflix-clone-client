@@ -1,5 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import banner from "../assets/banner.jpg";
+import stranger from "../assets/stranger.jpg";
+import "./Home.css";
 
 const Home = () => {
   return (
@@ -17,11 +20,30 @@ const Home = () => {
           <h2 className="text-base md:text-xl text-center text-white absolute top-[45%] md:top-[55%]">
             Watch anywhere. Cancel anytime.
           </h2>
-          <button className="bg-red-700 py-3 px-4 hover:bg-red-800 text-white text-xl font-medium absolute  top-[50%] md:top-[65%]">
-            Get Started
-          </button>
+          <Link to="/signin" className="absolute top-[50%] md:top-[65%]">
+            <button className="bg-red-700 py-3 px-4 hover:bg-red-800 text-white text-xl font-medium">
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
+      <hr />
+      <section className="mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-10 place-items-center">
+          <div>
+            <img src={stranger} className="md:p-5" alt="" />
+          </div>
+          <div className="pr-8">
+            <h1 className="text-3xl md:text-5xl font-semibold">
+              Download your shows to watch offline.
+            </h1>
+            <p className="text-base md:text-xl mt-4">
+              Save your favorites easily and always have something to watch.
+            </p>
+          </div>
+        </div>
+      </section>
+      <hr />
     </div>
   );
 };
