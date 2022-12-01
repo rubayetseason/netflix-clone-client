@@ -10,7 +10,7 @@ const Navbar = () => {
       </div>
       <div>
         <button className="text-white mr-4">Sign In</button>
-        <button className="bg-red-600 py-2 px-3 hover:bg-red-700 text-white">Sign Up</button>
+        <button className="bg-red-600 py-2 px-3 hover:bg-red-800 text-white">Sign Up</button>
       </div>
     </div>
   );

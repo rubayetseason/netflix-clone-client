@@ -17,6 +17,9 @@ const Home = () => {
           <h2 className="text-base md:text-xl text-center text-white absolute top-[45%] md:top-[55%]">
             Watch anywhere. Cancel anytime.
           </h2>
+          <button className="bg-red-700 py-3 px-4 hover:bg-red-800 text-white text-xl font-medium absolute  top-[50%] md:top-[65%]">
+            Get Started
+          </button>
         </div>
       </div>
     </div>
