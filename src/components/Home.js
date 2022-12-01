@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import banner from "../assets/banner.jpg";
 import stranger from "../assets/stranger.jpg";
+import tv from "../assets/tv.png";
 import "./Home.css";
 
 const Home = () => {
@@ -44,6 +45,22 @@ const Home = () => {
         </div>
       </section>
       <hr />
+      <section className="my-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-10 place-items-center">
+          <div>
+            <img src={tv} className="md:p-5" alt="" />
+          </div>
+          <div className="pr-8">
+            <h1 className="text-3xl md:text-5xl font-semibold">
+              Enjoy on your TV.
+            </h1>
+            <p className="text-base md:text-xl mt-4">
+              Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
+              Blu-ray players, and more.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
