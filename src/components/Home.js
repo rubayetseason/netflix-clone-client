@@ -16,18 +16,25 @@ const Home = () => {
           src={banner}
           alt="home-banner"
         />
-        <div className="grid place-items-center">
-          <h1 className="text-white text-center font-semibold text-3xl md:text-5xl inset-y-1/3 absolute">
-            Unlimited movies, TV <br /> shows, and more.
-          </h1>
-          <h2 className="text-base md:text-xl text-center text-white absolute top-[45%] md:top-[55%]">
-            Watch anywhere. Cancel anytime.
-          </h2>
-          <Link to="/signin" className="absolute top-[50%] md:top-[65%]">
-            <button className="bg-red-700 py-3 px-4 hover:bg-red-800 text-white text-xl font-medium">
-              Get Started
-            </button>
-          </Link>
+        <div className="w-full absolute top-1/3">
+          <div>
+            <h1 className="text-white text-center font-semibold text-3xl md:text-5xl px-1">
+              Unlimited movies, TV <br /> shows, and more.
+            </h1>
+            <br />
+            <h2 className="text-base md:text-xl text-center text-white">
+              Watch anywhere. Cancel anytime.
+            </h2>
+            <br />
+            <div className="grid place-items-center">
+              {" "}
+              <Link to="/signin" className="">
+                <button className="bg-red-700 py-3 px-4 hover:bg-red-800 text-white text-xl font-medium">
+                  Get Started
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
       <hr />
