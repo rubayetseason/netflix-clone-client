@@ -23,20 +23,20 @@
   }
   
   .ad-textbox > span {
-    top: 50%;
+    top: 60%;
     left: 0;
   }
   
   .ad-textbox > label {
-    top: 50%;
-    left: 34px;
+    top: 60%;
+    left: 24px;
     white-space: nowrap;
   }
   
   .ad-textbox > input {
     height: 60px;
     width: 320px;
-    padding-left: 34px;
+    padding-left: 24px;
     background: transparent;
     border: 0;
     outline: none;
