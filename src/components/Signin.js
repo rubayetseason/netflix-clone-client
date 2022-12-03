@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import lights from "../assets/lights.jpg";
 import "./shared/inputStyle.css";
 
@@ -29,7 +30,7 @@ const Signin = () => {
           className="w-full brightness-75 h-full absolute object-cover"
           alt="lights background"
         />
-        <div className="fixed w-full px-5 py-24 z-50">
+        <div className="fixed w-full px-5 py-24 z-50 mt-14 md:mt-0">
           <div className="max-w-[450px] max-h-[600px] mx-auto bg-black/75 text-white">
             <div className="max-w-[320px] mx-auto py-10">
               <h1 className="text-2xl font-medium text-center">Sign In</h1>
@@ -64,11 +65,24 @@ const Signin = () => {
                   </div>
                 </div>
                 <br />
-                <br />
-                <button className="bg-[#E50914] w-full  py-3 font-medium">
+                <p className="mb-3 text-sm font-light">
+                  New to Netflix?{" "}
+                  <Link to="/signup" className="hover:underline">
+                    Sign up now
+                  </Link>{" "}
+                </p>
+                <button className="bg-[#E50914] w-full mt-4 py-3 font-medium">
                   Sign In
                 </button>
               </form>
+              <div className="mt-10 flex justify-between">
+                <div className="font-light text-sm">
+                  <input type="checkbox" /> Remember me
+                </div>
+                <div className="text-sm">
+                  <p className="hover:underline">Need help?</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
