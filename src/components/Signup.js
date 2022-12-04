@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import lights from "../assets/lights.jpg";
 import { AuthContext } from "../context/AuthProvider";
 import "./shared/inputStyle.css";
+import toast from "react-hot-toast";
 
 const Signup = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, logOut } = useContext(AuthContext);
 
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
@@ -27,6 +28,15 @@ const Signup = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("User created successfully");
+        form.reset();
+        logOut()
+          .then((result) => {
+            console.log(result);
+            setUserEmail("");
+            setUserPassword("");
+          })
+          .catch((error) => console.log(error));
       })
       .then((error) => console.log(error));
   };
