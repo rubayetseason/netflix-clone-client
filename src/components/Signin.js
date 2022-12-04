@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import lights from "../assets/lights.jpg";
 import { AuthContext } from "../context/AuthProvider";
 import "./shared/inputStyle.css";
 
 const Signin = () => {
   const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/gallery";
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
 
@@ -28,6 +31,7 @@ const Signin = () => {
         const user = result.user;
         console.log(user);
         toast.success("User sign in successful");
+        navigate(from, { replace: true });
         form.reset();
       })
       .then((error) => console.log(error));
