@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import lights from "../assets/lights.jpg";
+import { AuthContext } from "../context/AuthProvider";
 import "./shared/inputStyle.css";
 
 const Signup = () => {
+  const { createUser } = useContext(AuthContext);
+
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
 
@@ -19,7 +23,12 @@ const Signup = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .then((error) => console.log(error));
   };
 
   return (
@@ -42,6 +51,7 @@ const Signup = () => {
                       id="textbox1"
                       type="text"
                       name="email"
+                      required
                       onChange={handleChangeEmail}
                     />
                     <span className="material-symbols-outlined"></span>
@@ -57,6 +67,7 @@ const Signup = () => {
                       id="textbox2"
                       type="password"
                       name="password"
+                      required
                       onChange={handleChangePassword}
                     />
                     <span className="material-symbols-outlined"></span>
