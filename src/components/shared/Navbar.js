@@ -1,7 +1,16 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {})
+      .then((error) => console.log(error));
+  };
   return (
     <div className="flex justify-between items-center w-full absolute z-[100] px-5 pt-5">
       <div>
@@ -9,17 +18,31 @@ const Navbar = () => {
           NETFLIX
         </h1>
       </div>
-      <div>
-        <Link to="/signin">
-          <button className="text-white mr-4">Sign In</button>
-        </Link>
-        <Link to='signup'>
-          {" "}
-          <button className="bg-red-600 py-2 px-3 hover:bg-red-800 text-white">
-            Sign Up
+      {user?.email ? (
+        <div>
+          <Link to="/profile">
+            <button className="text-white mr-4">Profile</button>
+          </Link>{" "}
+          <button
+            onClick={handleLogOut}
+            className="bg-red-600 py-2 px-3 hover:bg-red-800 text-white"
+          >
+            Log Out
           </button>
-        </Link>
-      </div>
+        </div>
+      ) : (
+        <div>
+          <Link to="/signin">
+            <button className="text-white mr-4">Sign In</button>
+          </Link>
+          <Link to="signup">
+            {" "}
+            <button className="bg-red-600 py-2 px-3 hover:bg-red-800 text-white">
+              Sign Up
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

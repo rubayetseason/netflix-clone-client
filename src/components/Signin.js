@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import lights from "../assets/lights.jpg";
+import { AuthContext } from "../context/AuthProvider";
 import "./shared/inputStyle.css";
 
 const Signin = () => {
+  const { signIn } = useContext(AuthContext);
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
 
@@ -19,7 +23,14 @@ const Signin = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("User sign in successful");
+        form.reset();
+      })
+      .then((error) => console.log(error));
   };
 
   return (
