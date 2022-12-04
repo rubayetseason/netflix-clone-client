@@ -67,7 +67,7 @@ const Signin = () => {
                 <br />
                 <p className="mb-3 text-sm font-light">
                   New to Netflix?{" "}
-                  <Link to="/signup" className="hover:underline">
+                  <Link to="/signup" className="underline">
                     Sign up now
                   </Link>{" "}
                 </p>
