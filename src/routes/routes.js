@@ -6,6 +6,7 @@ import NotFound from "../components/shared/NotFound";
 import Signin from "../components/Signin";
 import Signup from "../components/Signup";
 import Main from "../layouts/Main";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,11 +27,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile></Profile>,
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/gallery",
-        element: <Gallery></Gallery>,
+        element: (
+          <PrivateRoute>
+            <Gallery></Gallery>
+          </PrivateRoute>
+        ),
       },
     ],
   },

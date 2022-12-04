@@ -7,6 +7,7 @@ import "./shared/inputStyle.css";
 import toast from "react-hot-toast";
 
 const Signup = () => {
+  
   const { createUser, logOut } = useContext(AuthContext);
 
   const [userEmail, setUserEmail] = useState("");
