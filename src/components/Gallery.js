@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import item_requests from "./shared/MovieApi";
+import Row from "./shared/Row";
 
 const Gallery = () => {
   const [galleryMovies, setGalleryMovies] = useState([]);
@@ -20,7 +21,7 @@ const Gallery = () => {
   return (
     <div>
       <section className="gallery-section">
-        <div className="w-full h-[500px]">
+        <div className="w-full h-[450px] md:h-[500px]">
           <div className="w-full h-full">
             <img
               src={`https://image.tmdb.org/t/p/original/${galleryMovie?.backdrop_path}`}
@@ -44,6 +45,28 @@ const Gallery = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section className="rows-section my-5">
+        <Row genre="Top Rated" fetchUrl={item_requests?.top_rated}></Row>
+        <Row genre="Upcoming" fetchUrl={item_requests?.upcoming}></Row>
+        <Row genre="Now Playing" fetchUrl={item_requests?.now_playing}></Row>
+        <Row genre="Trending" fetchUrl={item_requests?.trending}></Row>
+        <Row
+          genre="Action Movies"
+          fetchUrl={item_requests?.action_movies}
+        ></Row>
+        <Row
+          genre="Romance Movies"
+          fetchUrl={item_requests?.romance_movies}
+        ></Row>
+        <Row
+          genre="Horror Movies"
+          fetchUrl={item_requests?.horror_movies}
+        ></Row>
+        <Row
+          genre="Comedy Movies"
+          fetchUrl={item_requests?.comedy_movies}
+        ></Row>
       </section>
     </div>
   );
