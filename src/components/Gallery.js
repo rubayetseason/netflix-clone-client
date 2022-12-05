@@ -45,10 +45,9 @@ const Gallery = () => {
           </div>
         </div>
       </section>
-      <section className="rows-section my-5">
-        <Row genre="Top Rated" fetchUrl={item_requests?.top_rated}></Row>
-        <Row genre="Upcoming" fetchUrl={item_requests?.upcoming}></Row>
+      <section className="rows-section mt-6 md:mt-12">
         <Row genre="Now Playing" fetchUrl={item_requests?.now_playing}></Row>
+        <Row genre="Upcoming" fetchUrl={item_requests?.upcoming}></Row>
         <Row genre="Trending" fetchUrl={item_requests?.trending}></Row>
         <Row
           genre="Action Movies"
@@ -66,6 +65,7 @@ const Gallery = () => {
           genre="Comedy Movies"
           fetchUrl={item_requests?.comedy_movies}
         ></Row>
+        <Row genre="Top Rated" fetchUrl={item_requests?.top_rated}></Row>
       </section>
     </div>
   );
