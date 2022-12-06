@@ -14,7 +14,6 @@ const Gallery = () => {
     });
   }, []);
 
-
   const galleryMovie =
     galleryMovies[Math.floor(Math.random() * galleryMovies.length)];
 
@@ -46,7 +45,7 @@ const Gallery = () => {
           </div>
         </div>
       </section>
-      <section className="rows-section mt-6 md:mt-12">
+      <section className="rows-section my-5">
         <Row genre="Now Playing" fetchUrl={item_requests?.now_playing}></Row>
         <Row genre="Upcoming" fetchUrl={item_requests?.upcoming}></Row>
         <Row genre="Trending" fetchUrl={item_requests?.trending}></Row>

@@ -22,7 +22,7 @@ const Navbar = () => {
         <div>
           <Link to="/gallery">
             <button className="text-white mr-4">Gallery</button>
-          </Link>{" "}
+          </Link>
           <button
             onClick={handleLogOut}
             className="bg-red-600 py-2 px-3 hover:bg-red-800 text-white"
@@ -36,7 +36,6 @@ const Navbar = () => {
             <button className="text-white mr-4">Sign In</button>
           </Link>
           <Link to="signup">
-            {" "}
             <button className="bg-red-600 py-2 px-3 hover:bg-red-800 text-white">
               Sign Up
             </button>

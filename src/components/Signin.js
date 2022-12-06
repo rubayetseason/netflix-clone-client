@@ -31,8 +31,8 @@ const Signin = () => {
         const user = result.user;
         console.log(user);
         toast.success("User sign in successful");
-        navigate(from, { replace: true });
         form.reset();
+        navigate(from, { replace: true });
       })
       .then((error) => console.log(error));
   };

@@ -1,7 +1,7 @@
 .row-container{
     display: flex;
-    overflow-y: hidden;
     overflow-x: scroll;
+    overflow-y: hidden;
     padding: 20px;
 }
 
@@ -10,12 +10,10 @@
 }
 
 .movie_img{
-    width: 100%;
-    object-fit: contain;
-    margin-right: 10px;
-    transition: transform 0.5s;
+    margin-right: 15px;
+    transition: transform 0.75s;
 }
 
 .movie_img:hover{
-    transform: scale(1.18);
+transform: scale(1.20);
 }

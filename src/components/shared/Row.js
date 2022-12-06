@@ -2,11 +2,10 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Movie from "./Movie";
-import "./Row.css";
+import './Row.css';
 
 const Row = ({ genre, fetchUrl }) => {
   const [rowMovies, setRowMovies] = useState([]);
-
 
   useEffect(() => {
     axios.get(fetchUrl).then((data) => {
@@ -14,18 +13,12 @@ const Row = ({ genre, fetchUrl }) => {
     });
   }, [fetchUrl]);
 
-
-  
-
   return (
     <div className="mb-5">
-      <h1 className="text-xl md:text-2xl ml-5 font-semibold">{genre}</h1>
+      <h1 className="text-xl md:text-2xl font-semibold ml-5">{genre}</h1>
       <div className="row-container">
         {rowMovies.map((rowMovie, i) => (
-          <Movie
-            key={i}
-            rowMovie={rowMovie}
-          ></Movie>
+          <Movie key={i} rowMovie={rowMovie}></Movie>
         ))}
       </div>
     </div>
