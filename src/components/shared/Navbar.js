@@ -20,8 +20,8 @@ const Navbar = () => {
       </div>
       {user?.email ? (
         <div>
-          <Link to="/profile">
-            <button className="text-white mr-4">Profile</button>
+          <Link to="/gallery">
+            <button className="text-white mr-4">Gallery</button>
           </Link>{" "}
           <button
             onClick={handleLogOut}

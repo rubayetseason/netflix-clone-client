@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Gallery from "../components/Gallery";
 import Home from "../components/Home";
-import Profile from "../components/Profile";
 import NotFound from "../components/shared/NotFound";
 import Signin from "../components/Signin";
 import Signup from "../components/Signup";
@@ -24,14 +23,6 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup></Signup>,
-      },
-      {
-        path: "/profile",
-        element: (
-          <PrivateRoute>
-            <Profile></Profile>
-          </PrivateRoute>
-        ),
       },
       {
         path: "/gallery",
