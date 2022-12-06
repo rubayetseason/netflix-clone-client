@@ -14,6 +14,7 @@ const Gallery = () => {
     });
   }, []);
 
+
   const galleryMovie =
     galleryMovies[Math.floor(Math.random() * galleryMovies.length)];
 
