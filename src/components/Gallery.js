@@ -47,7 +47,6 @@ const Gallery = () => {
       </section>
       <section className="rows-section my-5">
         <Row genre="Now Playing" fetchUrl={item_requests?.now_playing}></Row>
-        <Row genre="Upcoming" fetchUrl={item_requests?.upcoming}></Row>
         <Row genre="Trending" fetchUrl={item_requests?.trending}></Row>
         <Row
           genre="Action Movies"
@@ -61,11 +60,6 @@ const Gallery = () => {
           genre="Horror Movies"
           fetchUrl={item_requests?.horror_movies}
         ></Row>
-        <Row
-          genre="Comedy Movies"
-          fetchUrl={item_requests?.comedy_movies}
-        ></Row>
-        <Row genre="Top Rated" fetchUrl={item_requests?.top_rated}></Row>
       </section>
     </div>
   );

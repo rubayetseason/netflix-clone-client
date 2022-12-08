@@ -39,12 +39,12 @@ const Navbar = () => {
         </div>
       ) : (
         <div>
-          <Link to="/signin">
-            <button className="text-white mr-4">Sign In</button>
+          <Link to="/gallery">
+            <button className="text-white mr-4">Gallery</button>
           </Link>
-          <Link to="signup">
+          <Link to="signin">
             <button className="bg-red-600 py-2 px-3 hover:bg-red-800 text-white">
-              Sign Up
+              Sign In
             </button>
           </Link>
         </div>
