@@ -1,15 +1,24 @@
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const handleLogOut = () => {
     logOut()
-      .then((result) => {})
-      .then((error) => console.log(error));
+      .then((result) => {
+        const path = "/";
+        navigate(path);
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+        // const path = '/';
+        // navigate(path);
+      });
   };
   return (
     <div className="flex justify-between items-center w-full absolute z-[100] px-5 pt-5">
@@ -18,7 +27,7 @@ const Navbar = () => {
           NETFLIX
         </h1>
       </div>
-      {user?.email ? (
+      {user?.uid ? (
         <div>
           <Link to="/gallery">
             <button className="text-white mr-4">Gallery</button>
