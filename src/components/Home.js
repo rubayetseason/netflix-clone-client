@@ -101,7 +101,7 @@ const Home = () => {
                   <img src={logo} className="w-full" alt="logo" />
                 </div>
                 <span className="self-center text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-br cursor-pointer from-red-600 to-red-900">
-                  NETFLIX
+                  NITFLEX
                 </span>
               </Link>
             </div>

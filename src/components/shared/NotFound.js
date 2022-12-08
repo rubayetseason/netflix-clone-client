@@ -16,9 +16,7 @@ const NotFound = () => {
             <h1 className="font-extrabold text-5xl text-center text-white leading-tight mt-4">
               You are alone here.{" "}
               <Link to="/">
-                <button className="bg-red-600 p-2">
-                  Return Home
-                </button>
+                <button className="bg-red-600 p-2">Return Home</button>
               </Link>
             </h1>
             <p className="font-extrabold text-8xl my-44 text-white animate-bounce">

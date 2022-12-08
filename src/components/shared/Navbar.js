@@ -16,15 +16,13 @@ const Navbar = () => {
       })
       .catch((error) => {
         console.log(error);
-        // const path = '/';
-        // navigate(path);
       });
   };
   return (
     <div className="flex justify-between items-center w-full absolute z-[100] px-5 pt-5">
       <div>
         <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-br cursor-pointer from-red-600 to-red-900">
-          NETFLIX
+          NITFLEX
         </h1>
       </div>
       {user?.uid ? (
